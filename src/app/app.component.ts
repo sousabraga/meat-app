@@ -6,11 +6,8 @@ import {Component, OnInit} from "@angular/core"
 })
 export class AppComponent implements OnInit {
 
-  content = 'Welcome do Meat App!'
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
