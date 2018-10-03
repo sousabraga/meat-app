@@ -10,14 +10,14 @@ export class MenuItemComponent implements OnInit {
 
   @Input() menuItem: MenuItem;
 
-  @Output() addEvent = new EventEmitter();
+  @Output() add = new EventEmitter();
 
   constructor() {}
 
   ngOnInit() {}
 
   emitAddEvent() {
-    this.addEvent.emit(this.menuItem);
+    this.add.emit(this.menuItem);
   }
 
 }
