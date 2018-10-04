@@ -22,42 +22,21 @@
           </div>
 
           <div class="col-sm-6 col-xs-12">
-            <div class="form-group"
-              [class.has-success]="inputAddress.valid && (inputAddress.dirty || inputAddress.touched)"
-              [class.has-error]="!inputAddress.valid && (inputAddress.dirty || inputAddress.touched)">
-
-              <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> Endereço</label>
-              <input type="text" class="form-control" name="address" required minlength="5" #inputAddress="ngModel" ngModel placeholder="Endereço" autocomplete="off">
-              <span class="help-block" *ngIf="inputAddress.valid && (inputAddress.dirty || inputAddress.touched)">
-                <i class="fa fa-check"></i> Ok
-              </span>
-              <span class="help-block" *ngIf="!inputAddress.valid && (inputAddress.dirty || inputAddress.touched)">
-                <i class="fa fa-remove"></i> Campo obrigatório
-              </span>
-            </div>
+            <mt-input-container label="Endereço" errorMessage="Campo obrigatório e com no mínimo 5 caracteres">
+              <input type="text" class="form-control" name="address" ngModel required minlength="5" placeholder="Endereço" autocomplete="off"/>
+            </mt-input-container>
           </div>
 
           <div class="col-sm-2 col-xs-6">
-            <div class="form-group"
-              [class.has-success]="inputNumber.valid && (inputNumber.dirty || inputNumber.touched)"
-              [class.has-error]="!inputNumber.valid && (inputNumber.dirty || inputNumber.touched)">
-
-              <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> Número</label>
-              <input type="text" class="form-control" name="number" required #inputNumber="ngModel" ngModel placeholder="Número" autocomplete="off">
-              <span class="help-block" *ngIf="inputNumber.valid && (inputNumber.dirty || inputNumber.touched)">
-                <i class="fa fa-check"></i> Ok
-              </span>
-              <span class="help-block" *ngIf="!inputNumber.valid && (inputNumber.dirty || inputNumber.touched)">
-                <i class="fa fa-remove"></i> Campo obrigatório
-              </span>
-            </div>
+            <mt-input-container label="Número" errorMessage="Campo obrigatório">
+              <input type="text" class="form-control" name="number" ngModel required placeholder="Número" autocomplete="off"/>
+            </mt-input-container>
           </div>
 
           <div class="col-sm-4 col-xs-6">
-            <div class="form-group">
-              <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> Complemento</label>
+            <mt-input-container label="Complemento">
               <input type="text" class="form-control" name="optional" ngModel placeholder="Complemento">
-            </div>
+            </mt-input-container>
           </div>
 
         </div>
