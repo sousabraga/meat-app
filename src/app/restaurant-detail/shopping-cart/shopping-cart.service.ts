@@ -13,9 +13,21 @@ export class ShoppingCartService {
       let foundItem = this.cartItems.find(cartItem => cartItem.menuItem.id === menuItem.id);
 
       if (foundItem) {
-        foundItem.quantity += 1;
+        this.increaseQuantity(foundItem);
       } else {
         this.cartItems.push(new CartItem(menuItem));
+      }
+    }
+
+    increaseQuantity(cartItem: CartItem) {
+      cartItem.quantity += 1;
+    }
+
+    decreaseQuantity(cartItem: CartItem) {
+      cartItem.quantity -= 1;
+
+      if (cartItem.quantity === 0) {
+        this.removeItem(cartItem);
       }
     }
 
