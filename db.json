@@ -370,5 +370,48 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "Rua F",
+      "number": "53",
+      "optionalAddress": "Casa Baixo",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 2,
+          "menuId": "capp"
+        },
+        {
+          "quantity": 1,
+          "menuId": "espreso"
+        },
+        {
+          "quantity": 1,
+          "menuId": "starb"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "Av. Germano Frank",
+      "number": "1400",
+      "optionalAddress": "",
+      "paymentOption": "DEB",
+      "orderItems": [
+        {
+          "quantity": 2,
+          "menuId": "cup"
+        },
+        {
+          "quantity": 2,
+          "menuId": "straw"
+        },
+        {
+          "quantity": 1,
+          "menuId": "cake"
+        }
+      ],
+      "id": 2
+    }
+  ]
 }
