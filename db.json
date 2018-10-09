@@ -412,6 +412,23 @@
         }
       ],
       "id": 2
+    },
+    {
+      "address": "Rua Vasco da Gama",
+      "number": "1340",
+      "optionalAddress": "",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "donut"
+        }
+      ],
+      "id": 3
     }
   ]
 }
