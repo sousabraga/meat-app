@@ -5,12 +5,9 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 
 import { ROUTES } from './app.routes';
-
-import { RestaurantsService } from './restaurants/restaurants.service';
-import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
-import { OrderService } from './order/order.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -42,13 +39,11 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
     BrowserModule,
     HttpModule,
     SharedModule,
+    CoreModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'pt-BR'},
-    RestaurantsService,
-    ShoppingCartService,
-    OrderService
   ],
   bootstrap: [AppComponent]
 })

@@ -469,6 +469,26 @@
         }
       ],
       "id": 5
+    },
+    {
+      "name": "Hareta Alves",
+      "email": "hareta@gmail.com",
+      "emailConfirmation": "hareta@gmail.com",
+      "address": "Rua Vasco da Gama",
+      "number": "300",
+      "optionalAddress": "",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 2,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 3,
+          "menuId": "donut"
+        }
+      ],
+      "id": 6
     }
   ]
 }
