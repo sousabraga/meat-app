@@ -489,6 +489,30 @@
         }
       ],
       "id": 6
+    },
+    {
+      "name": "Italo Leitão",
+      "email": "italo@gmail.com",
+      "emailConfirmation": "italo@gmail.com",
+      "address": "Av. Germano Frank",
+      "number": "1400",
+      "optionalAddress": "",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup"
+        },
+        {
+          "quantity": 1,
+          "menuId": "straw"
+        },
+        {
+          "quantity": 1,
+          "menuId": "cake"
+        }
+      ],
+      "id": 7
     }
   ]
 }
