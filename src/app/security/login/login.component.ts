@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       password: this.formBuilder.control('', [Validators.required])
     });
 
-    this.navigateTo = this.activatedRoute.snapshot.params["to"] || "/";
+    this.navigateTo = atob(this.activatedRoute.snapshot.params["to"]) || "/";
   }
 
   login() {
