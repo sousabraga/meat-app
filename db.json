@@ -513,6 +513,30 @@
         }
       ],
       "id": 7
+    },
+    {
+      "name": "Matheus Braga",
+      "email": "matheus@gmail.com",
+      "emailConfirmation": "matheus@gmail.com",
+      "address": "Rua Desembargador Praxedes",
+      "number": "5000",
+      "optionalAddress": "",
+      "paymentOption": "DEB",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "donut"
+        },
+        {
+          "quantity": 1,
+          "menuId": "bread"
+        }
+      ],
+      "id": 8
     }
   ]
 }
