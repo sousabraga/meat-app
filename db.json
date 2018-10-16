@@ -537,6 +537,34 @@
         }
       ],
       "id": 8
+    },
+    {
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "emailConfirmation": "admin@gmail.com",
+      "address": "Rua Hercules",
+      "number": "32",
+      "optionalAddress": "",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "donut"
+        },
+        {
+          "quantity": 1,
+          "menuId": "bread"
+        },
+        {
+          "quantity": 1,
+          "menuId": "espreso"
+        }
+      ],
+      "id": 9
     }
   ]
 }

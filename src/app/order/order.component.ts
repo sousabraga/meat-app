@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import 'rxjs/add/operator/do';
+
 import { RadioOption } from '../shared/radio/radio-option.model';
 import { OrderService } from './order.service';
 import { CartItem } from '../restaurant-detail/shopping-cart/cart-item.model';
@@ -17,6 +19,8 @@ export class OrderComponent implements OnInit {
   orderForm: FormGroup;
 
   delivery: number = 8;
+
+  order: Order;
 
   paymentOptions: RadioOption[] = [
     {label: "Dinheiro", value: "MON"},
@@ -86,10 +90,16 @@ export class OrderComponent implements OnInit {
     order.orderItems = this.cartItems()
       .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id));
 
-    this.orderService.checkOrder(order).subscribe((order: Order) => {
-      this.router.navigate(['/order-summary']);
-      this.orderService.clear();
-    });
+    this.orderService.checkOrder(order)
+      .do((order: Order) => this.order = order)
+      .subscribe((order: Order) => {
+        this.router.navigate(['/order-summary']);
+        this.orderService.clear();
+      });
+  }
+
+  isOrderCompleted(): boolean {
+    return this.order !== undefined;
   }
 
 }
