@@ -6,6 +6,7 @@ import { RadioOption } from '../shared/radio/radio-option.model';
 import { OrderService } from './order.service';
 import { CartItem } from '../restaurant-detail/shopping-cart/cart-item.model';
 import { Order, OrderItem } from './order.model';
+import { LoginService } from '../security/login/login.service';
 
 @Component({
   selector: 'mt-order',
@@ -30,14 +31,15 @@ export class OrderComponent implements OnInit {
   constructor(
     private orderService: OrderService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private loginService: LoginService
   ) {}
 
   ngOnInit() {
     this.orderForm = this.formBuilder.group({
-      name: this.formBuilder.control("", [Validators.required, Validators.minLength(5)]),
-      email: this.formBuilder.control("", [Validators.required, Validators.pattern(this.emailPattern)]),
-      emailConfirmation: this.formBuilder.control("", [Validators.required, Validators.pattern(this.emailPattern)]),
+      name: this.formBuilder.control(this.loginService.user.name, [Validators.required, Validators.minLength(5)]),
+      email: this.formBuilder.control(this.loginService.user.email, [Validators.required, Validators.pattern(this.emailPattern)]),
+      emailConfirmation: this.formBuilder.control(this.loginService.user.email, [Validators.required, Validators.pattern(this.emailPattern)]),
       address: this.formBuilder.control("", [Validators.required, Validators.minLength(5)]),
       number: this.formBuilder.control("", [Validators.required, Validators.pattern(this.numberPattern)]),
       optionalAddress: this.formBuilder.control(""),
