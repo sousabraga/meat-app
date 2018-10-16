@@ -9,15 +9,13 @@ import { CartItem } from '../restaurant-detail/shopping-cart/cart-item.model';
 import { Order, OrderItem } from './order.model';
 
 import { MEAT_API } from '../app.api';
-import { LoginService } from '../security/login/login.service';
 
 @Injectable()
 export class OrderService {
 
   constructor(
     private shoppingCartService: ShoppingCartService,
-    private httpClient: HttpClient,
-    private loginService: LoginService
+    private httpClient: HttpClient
   ) {}
 
   cartItems(): CartItem[] {
@@ -45,13 +43,7 @@ export class OrderService {
   }
 
   checkOrder(order: Order): Observable<Order> {
-    let headers = new HttpHeaders();
-
-    if (this.loginService.isLoggedIn()) {
-      headers = headers.set('Authorization', `Bearer ${this.loginService.user.accessToken}`);
-    }
-
-    return this.httpClient.post<Order>(`${MEAT_API}/orders`, order, {headers: headers});
+    return this.httpClient.post<Order>(`${MEAT_API}/orders`, order);
   }
 
 }
